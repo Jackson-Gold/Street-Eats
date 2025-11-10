@@ -18,7 +18,7 @@ StreetEats is a sleek mobile mockup that showcases how a community-powered food 
    ```bash
    npm install
    ```
-2. Launch the Expo development server (the script will invoke the local Expo CLI via `npx` so no global install is required):
+2. Launch the Expo development server:
    ```bash
    npm run start
    ```

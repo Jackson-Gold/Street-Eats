@@ -18,10 +18,7 @@ StreetEats is a sleek mobile mockup that showcases how a community-powered food 
    ```bash
    npm install
    ```
-
-   > Skipping this step previously caused `npm run start` to fail with `Unable to find expo in this project`. The project now includes a safeguard that auto-installs dependencies when `expo` is missing, but manual installation is still recommended to avoid repeated downloads.
-
-2. Launch the Expo development server (the script will invoke the local Expo CLI via `npx` so no global install is required):
+2. Launch the Expo development server:
    ```bash
    npm run start
    ```

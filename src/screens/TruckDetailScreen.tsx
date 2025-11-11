@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react';
 import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '../navigation';
@@ -38,7 +37,7 @@ const TruckDetailScreen: React.FC = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <ImageBackground source={{ uri: truck.heroImage }} style={styles.hero} imageStyle={styles.heroImage}>
-        <LinearGradient colors={['rgba(8,8,12,0.15)', 'rgba(8,8,12,0.95)']} style={StyleSheet.absoluteFillObject} />
+        <View style={styles.heroOverlay} />
         <View style={styles.heroContent}>
           <View style={styles.heroBadgeRow}>
             <RatingBadge rating={truck.rating} count={truck.ratingCount} />
@@ -142,6 +141,10 @@ const styles = StyleSheet.create({
   heroImage: {
     borderBottomLeftRadius: 28,
     borderBottomRightRadius: 28
+  },
+  heroOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(8,8,12,0.85)'
   },
   heroContent: {
     padding: 24,

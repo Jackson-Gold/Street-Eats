@@ -1,6 +1,5 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { palette } from '../theme/colors';
 import { typography } from '../theme/typography';
 
@@ -12,7 +11,7 @@ export const MapHeader: React.FC = () => (
     style={styles.container}
     imageStyle={styles.image}
   >
-    <LinearGradient colors={['rgba(8,8,12,0.1)', 'rgba(8,8,12,0.95)']} style={StyleSheet.absoluteFillObject} />
+    <View style={styles.overlay} />
     <View style={styles.content}>
       <Text style={typography.subtitle}>Live Now</Text>
       <Text style={styles.title}>Food trucks buzzing nearby</Text>
@@ -30,6 +29,10 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 28
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(8,8,12,0.85)'
   },
   content: {
     position: 'absolute',

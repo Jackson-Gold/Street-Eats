@@ -1,7 +1,6 @@
 import React from 'react';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
 import { palette, shadows } from '../theme/colors';
 import { FoodTruck } from '../types';
 import { RatingBadge } from './RatingBadge';
@@ -16,7 +15,7 @@ export const TruckCard: React.FC<TruckCardProps> = ({ truck, onPress }) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <ImageBackground source={{ uri: truck.heroImage }} style={styles.image} imageStyle={styles.imageBorder}>
-        <LinearGradient colors={['rgba(8,8,12,0)', 'rgba(8,8,12,0.95)']} style={StyleSheet.absoluteFillObject} />
+        <View style={styles.overlay} />
         <View style={styles.ratingRow}>
           <RatingBadge rating={truck.rating} count={truck.ratingCount} />
           <View style={styles.distancePill}>
@@ -60,6 +59,10 @@ const styles = StyleSheet.create({
   },
   imageBorder: {
     borderRadius: 28
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(8, 8, 12, 0.78)'
   },
   ratingRow: {
     flexDirection: 'row',
